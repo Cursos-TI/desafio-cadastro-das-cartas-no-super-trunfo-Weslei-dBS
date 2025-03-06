@@ -57,17 +57,6 @@ int main() {
     SP =  (double) Populacao + Area + PIB + NPT + DPI + PIBpC;
     SP2 = (double) Populacao2 + Area2 + PIB2 + NPT2 + DPI2 + PIBpC2;
 
-//Disputa das cartas
-
-    Resultado1 = Populacao > Populacao2;
-    Resultado2 = Area > Area2;
-    Resultado3 = PIB > PIB2;
-    Resultado4 = NPT > NPT2;
-    Resultado5 = DP < DP2;
-    Resultado6 = PIBpC > PIBpC2;
-    Resultado7 =  SP > SP2;
-
-
 //Cartas
 
     printf("Carta 1: \n");
@@ -92,15 +81,14 @@ int main() {
 
 //Comparação de Cartas:
     
-    printf("***Quem venceu? Vitoria=1, Derrota=0***\n");
-    printf("População: Carta 1 venceu (%d)\n", Resultado1);
-    printf("Área: Carta 1 venceu (%d)\n", Resultado2);
-    printf("PIB: Carta 1 venceu (%d)\n", Resultado3);
-    printf("Pontos Turísticos: Carta 1 venceu (%d)\n", Resultado4);
-    printf("Densidade Populacional: Carta 1 venceu (%d)\n", Resultado5);
-    printf("PIB per Capita: Carta 1 venceu (%d)\n", Resultado6);
-    printf("Super Poder: Carta 1 venceu (%d)\n", Resultado7);
-    printf("\n  \n");
+    printf("Carta 1 - %s: %.2lfkm²\n", Cidade, Area);
+    printf("Carta 2 - %s: %.2lfkm²\n", Cidade2, Area2);
+    if (Area > Area2){
+        printf("Resultado: Carta 1(%s) Venceu!", Cidade);
+    } else{
+        printf("Resultado: Carta 2(%s) Venceu!", Cidade2);
+    }
+    printf("\n");
 
     return 0;
 }
